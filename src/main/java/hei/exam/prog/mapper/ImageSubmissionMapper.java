@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ImageSubmissionMapper {
 
-    public ImageSubmissionResponse toResponse(ImageSubmission entity) {
-        return new ImageSubmissionResponse(entity.getId(), entity.getFileName(), entity.getEmail());
-    }
+  public ImageSubmissionResponse toResponse(ImageSubmission entity) {
+    return new ImageSubmissionResponse(entity.getId(), entity.getFileName(), entity.getEmail());
+  }
 }
