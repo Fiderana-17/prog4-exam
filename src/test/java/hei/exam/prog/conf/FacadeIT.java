@@ -4,10 +4,13 @@ import static java.lang.Runtime.getRuntime;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 import hei.exam.prog.PojaGenerated;
+import hei.exam.prog.file.bucket.BucketComponent;
+import hei.exam.prog.mail.Mailer;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 
@@ -17,6 +20,10 @@ import org.springframework.test.context.DynamicPropertySource;
 public class FacadeIT {
 
   private static final PostgresConf POSTGRES_CONF = new PostgresConf();
+
+  @MockBean private BucketComponent bucketComponent;
+
+  @MockBean private Mailer mailer;
 
   @BeforeAll
   static void beforeAll() {
