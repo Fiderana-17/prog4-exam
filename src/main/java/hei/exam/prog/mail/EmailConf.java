@@ -5,13 +5,11 @@ import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.ses.SesClient;
 
 @PojaGenerated
 @Configuration
-@Profile("!test")
 public class EmailConf {
 
   @Getter private final String sesSource;
